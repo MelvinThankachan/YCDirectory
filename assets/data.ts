@@ -1,11 +1,24 @@
-export const posts = [
+export type Post = {
+  _createdAt: string;
+  views: number;
+  _id: string;
+  description: string;
+  author: { _id: number; name: string };
+  image: string;
+  category: string;
+  title: string;
+};
+
+export type Posts = Post[];
+
+export const dummyPosts: Posts = [
   {
     _createdAt: "yesterday",
     views: 100,
     _id: "1",
     description:
       "Exploring the future of robots and automation, diving into their potential.",
-    author: { _id: 1 },
+    author: { _id: 1, name: "John Doe" },
     image: "https://picsum.photos/500/500?random=1",
     category: "Robots",
     title: "The Rise of AI Robots",
@@ -16,7 +29,7 @@ export const posts = [
     _id: "2",
     description:
       "A deep dive into the impact of artificial intelligence on modern technology.",
-    author: { _id: 2 },
+    author: { _id: 2, name: "Jane Smith" },
     image: "https://picsum.photos/500/500?random=2",
     category: "Technology",
     title: "AI in Everyday Life",
@@ -27,7 +40,7 @@ export const posts = [
     _id: "3",
     description:
       "Understanding the evolution of quantum computing and its future possibilities.",
-    author: { _id: 3 },
+    author: { _id: 3, name: "Albert Newton" },
     image: "https://picsum.photos/500/500?random=3",
     category: "Tech Science",
     title: "Quantum Computing: The Next Big Thing?",
@@ -38,7 +51,7 @@ export const posts = [
     _id: "4",
     description:
       "How robotics are transforming healthcare with advanced medical robots and AI.",
-    author: { _id: 4 },
+    author: { _id: 4, name: "Emily Davis" },
     image: "https://picsum.photos/500/500?random=4",
     category: "Health Tech",
     title: "Medical Robotics: A New Era",
@@ -49,7 +62,7 @@ export const posts = [
     _id: "5",
     description:
       "Exploring the ethics of artificial intelligence and the implications for society.",
-    author: { _id: 5 },
+    author: { _id: 5, name: "Michael Johnson" },
     image: "https://picsum.photos/500/500?random=5",
     category: "Ethics & Philosophy",
     title: "The Ethics of AI: A Necessary Conversation",
@@ -60,7 +73,7 @@ export const posts = [
     _id: "6",
     description:
       "Looking at how AI is enhancing creativity in art, music, and design.",
-    author: { _id: 6 },
+    author: { _id: 6, name: "Sophia Lee" },
     image: "https://picsum.photos/500/500?random=6",
     category: "Art & Creativity",
     title: "AI and Creativity: A New Frontier",
@@ -71,7 +84,7 @@ export const posts = [
     _id: "7",
     description:
       "The potential and risks of autonomous vehicles in our daily lives and transportation.",
-    author: { _id: 7 },
+    author: { _id: 7, name: "James Brown" },
     image: "https://picsum.photos/500/500?random=7",
     category: "Autonomous Vehicles",
     title: "Self-Driving Cars: Are We Ready?",
@@ -82,7 +95,7 @@ export const posts = [
     _id: "8",
     description:
       "How machine learning is revolutionizing industries like finance, retail, and logistics.",
-    author: { _id: 8 },
+    author: { _id: 8, name: "Olivia Green" },
     image: "https://picsum.photos/500/500?random=8",
     category: "Machine Learning",
     title: "Machine Learning: The Future of Business",
@@ -93,7 +106,7 @@ export const posts = [
     _id: "9",
     description:
       "The role of robots in space exploration and their contribution to future missions.",
-    author: { _id: 9 },
+    author: { _id: 9, name: "David White" },
     image: "https://picsum.photos/500/500?random=9",
     category: "Space Technology",
     title: "Robots in Space: Pioneers of the Final Frontier",
@@ -104,7 +117,7 @@ export const posts = [
     _id: "10",
     description:
       "Exploring how robotics is used in manufacturing, enhancing production efficiency.",
-    author: { _id: 10 },
+    author: { _id: 10, name: "Isabella Black" },
     image: "https://picsum.photos/500/500?random=10",
     category: "Manufacturing Tech",
     title: "Robots on the Assembly Line: The Future of Manufacturing",

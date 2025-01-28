@@ -1,4 +1,6 @@
+import { dummyPosts, Post, Posts } from "@/assets/data";
 import SearchForm from "../../components/SearchForm";
+import StartUpCard from "@/components/StartUpCard";
 
 const Home = async ({
   searchParams,
@@ -7,18 +9,7 @@ const Home = async ({
 }) => {
   const query = (await searchParams).query;
   console.log("query: ", query);
-  const posts = [
-    {
-      _createdAt: "yesterday",
-      views: 100,
-      _id: "1",
-      description: "This is description",
-      author: { _id: 1 },
-      image: "https://picsum.photos/",
-      category: "Robots",
-      title: "We"
-    },
-  ];
+  const posts: Posts = dummyPosts;
 
   return (
     <>
@@ -36,7 +27,15 @@ const Home = async ({
         <p className="text-30-semibold">
           {query ? `Search results for "${query}"` : "All Startups"}
         </p>
-        <ul className="mt-7 card_grid"></ul>
+        <ul className="mt-7 card_grid">
+          {posts?.length > 0 ? (
+            posts.map((post: Post, index: number) => (
+              <StartUpCard key={post._id} post={post} />
+            ))
+          ) : (
+            <p className="no-results">No Startups Found</p>
+          )}
+        </ul>
       </section>
     </>
   );
